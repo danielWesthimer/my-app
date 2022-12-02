@@ -2,10 +2,11 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { useNavigate, Outlet, Link } from "react-router-dom";
 
-function Home() {
+function Home(props) {
 
     const [name, setName] = useState("")
-    let user = JSON.parse(localStorage.getItem("user"))
+    //  let user = JSON.parse(localStorage.getItem("user"))
+      let user = props.user
  let navigate = useNavigate()
 
     useEffect(() => {

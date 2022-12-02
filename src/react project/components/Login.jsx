@@ -22,18 +22,17 @@ function Login(props) {
 
     function checking() {
         const dataUserArr = props.data.filter((user) => user.username === name)
-        console.log(dataUserArr)
-        if (dataUserArr.length!=0){
-         let dataUser = dataUserArr[0]
+        
+        if (dataUserArr.length==0){
+            alert("The user does not exist ");
+            return}
+          let [dataUser] = dataUserArr
         ;
-        if (dataUser.address.geo.lat.slice(-4) === pass) {
+        if (dataUser.address.geo.lat.slice(-4) !== pass) {alert("The password is incorrect"); return}
+            props.userSpcific(dataUser)
             localStorage.setItem('user', JSON.stringify(dataUser));
             navigate("/home")
-        }
-         else{alert("try again") }
        
-    }
-    else{alert("try again")}
 }
 
 

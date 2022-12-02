@@ -1,10 +1,12 @@
 import React from 'react'
 import { useState } from 'react';
-function Info() {
+
+
+function Info(props) {
 
     
-    let  user= JSON.parse(localStorage.getItem("user"))
-    
+    // let  user= JSON.parse(localStorage.getItem("user"))
+    let user = props.user
    
 console.log(user);
   

@@ -35,7 +35,7 @@ function Posts() {
                 <th>number</th>
 
             </tr> 
-            {posts.map((element, idx) =><tr><td><Link to={`${posts[idx].id}`}><div>{element.title}</div></Link></td><td>{idx+1}</td></tr>)}
+            {posts.map((element, idx) =><tr><td><Link to={`${element.id}`}><div>{element.title}</div></Link></td><td>{idx+1}</td></tr>)}
            <Outlet/>
            </table>);
 
